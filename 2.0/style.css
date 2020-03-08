@@ -1,0 +1,55 @@
+#piedra {
+    height: 250px;
+    width: 194px;
+    background-image: url(Images/piedra.png);
+}
+
+#tijera {
+    height: 250px;
+    width: 194px;
+    background-image: url(Images/tijera.png);
+}
+
+#papel {
+    height: 250px;
+    width: 194px;
+    background-image: url(Images/papel.png);
+}
+
+#centrar {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%); 
+}
+
+#resultados {
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    text-align: center;
+
+}
+
+#ring {
+    background: url(Images/ring.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#pie {
+    position: absolute;
+    bottom: 0;
+    line-height: 100px;
+}
+
+#rondas {
+    position: relative;
+    margin-left: 50%;
+}
+
+#titulo {
+    
+    text-align: center;
+   
+}

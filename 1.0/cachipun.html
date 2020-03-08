@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function random3() {
+          
+            let a = Math.floor(Math.random()*10);
+            
+            do {
+                a = Math.floor(Math.random()*10)
+            } while (a>2)
+
+           return a
+           
+        }
+        
+        function computerPlay(a) {
+           
+            if (a == 2){ return "Piedra"}
+            else if (a == 1){ return "Papel"}
+            else if (a == 0){ return "Tijera"}
+        
+        }
+
+        
+        
+        function playerSelect () {
+            let  playerSelection = prompt("Elige!")
+            return playerSelection
+        }
+
+        let computerSelection = computerPlay(random3())
+
+        function round (playerSelection, computerSelection) {
+            
+            let result = "Malos inputs"
+
+            if (playerSelection.localeCompare("piedra") == 0) {
+                if (computerSelection.localeCompare("Piedra") == 0) {
+                    result = "Empate!"
+                }
+                else if (computerSelection.localeCompare("Tijera") == 0) {
+                    result = "Ganaste! Piedra le gana a Tijera."
+                }
+                else if (computerSelection.localeCompare("Papel") == 0) {
+                    result = "Perdiste! Papel le gana a Piedra."
+                }
+                else {result = "algo anda mal."}
+            } 
+
+            else if (playerSelection.localeCompare("tijera") == 0) {
+                if (computerSelection.localeCompare("Tijera") == 0) {
+                    result = "Empate!"
+                }
+                else if (computerSelection.localeCompare("Piedra") == 0) {
+                    result = "Perdiste! Piedra le gana a Tijera."
+                }
+                else if (computerSelection.localeCompare("Papel") == 0) {
+                    result = "Ganaste! Tijera le gana a Papel."
+                }
+                else {result = "algo anda mal."}
+            } 
+            
+            else if (playerSelection.localeCompare("papel") == 0) {
+                if (computerSelection.localeCompare("Papel") == 0) {
+                    result = "Empate!"
+                }
+                else if (computerSelection.localeCompare("Piedra") == 0) {
+                    result = "Ganaste! Papel le gana a Piedra."
+                }
+                else if (computerSelection.localeCompare("Tijera") == 0) {
+                    result = "Perdiste! Tijera le gana a Papel."
+                }
+                else {result = "algo anda mal"}
+            } 
+
+            else {result = "Solo se puede jugar con los valores 'Piedra', 'Papel' y 'Tijera'. Este punto será para el computador"}
+
+            return result
+        }
+
+        function game(){
+            
+            let i = 0
+            let computerScore = 0
+            let playerScore = 0
+
+            for (i=0; i<5; i++){
+            
+            let computerSelection = computerPlay(random3()) 
+            playerSelection = playerSelect()
+            let elecciones = "El computador eligió "+computerSelection+" y tú elegiste "+ playerSelection + "."
+            resultado = round (playerSelection.toLowerCase(), computerSelection)
+            let ronda
+            
+            if(resultado.localeCompare("H") < 0 && resultado.localeCompare("F") > 0){
+                playerScore ++
+            }
+            else if (resultado.localeCompare("F") < 0) {
+                playerScore ++
+                computerScore ++
+            }
+            else {
+                computerScore ++
+            }
+            
+            if (i==0){ronda="Primera"};if (i==1){ronda="Segunda"};if (i==2){ronda="Tercera"};if (i==3){ronda="Cuarta"};if (i==4){ronda="Quinta"};
+            console.log(ronda+" Ronda: " + elecciones + " " +resultado)
+            
+            }
+
+            let ganador 
+            if (computerScore < playerScore) {
+                ganador = "Felicidades! Has ganado."
+            }
+            else if (computerScore > playerScore) {
+                ganador = "El computador ha ganado. Mejor suerte para la próxima!"
+            }
+            else {ganador = "Ha sido un empate. Prueba jugar de nuevo!"}
+            console.log("Resultados: Computador:"+computerScore+", Jugador:"+playerScore+". "+ganador)
+        }
+       
+
+    </script>
+</html>
