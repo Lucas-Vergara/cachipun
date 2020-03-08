@@ -25,10 +25,9 @@
 
 #resultados {
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: 30%;
-    text-align: center;
-
+   
 }
 
 #ring {
@@ -52,4 +51,32 @@
     
     text-align: center;
    
+}
+
+#computador {
+    background-color: lightblue;
+    border: lightblue;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+#jugador {
+    background-color: lightblue;
+    border: lightblue;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#ronda {
+    background-color: lightblue;
+    border: lightblue;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#resultados2 {
+    position: absolute;
+    top: 68%;
+    left: 30%;
 }

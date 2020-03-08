@@ -14,9 +14,10 @@
         <button id="tijera" type="button"></button>
     </div>
     <div id="resultados">
-        <p id =score></p>
-        <p id =ronda></p>
+        <p id ="jugador"></p>
+        <p id="computador"></p>
     </div>
+    <div id="resultados2"><p id =ronda></p></div>
     <div id="pie">
         <button type="button" id="rondas"> RONDAS</button>
     </div>
@@ -118,7 +119,8 @@
             else {
                 computerScore ++
             }
-        document.getElementById("score").innerHTML = "Computador:" + computerScore + "   " + "Jugador:" + playerScore;
+        document.getElementById("computador").innerHTML = "Computador: " + computerScore;
+        document.getElementById("jugador").innerHTML = "Jugador: " + playerScore;
         document.getElementById("ronda").innerHTML = "Ronda N°"+(ronda+1)+": "+elecciones[ronda] +" "+ resultado;
         ronda ++
        }
